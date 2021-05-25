@@ -1,34 +1,31 @@
 ﻿using System;
 
-string secretNum = "42";
+int secretNum = 42;
 
 question();
 
 void question()
 {
     Console.WriteLine("What is the secret number?");
+    int guess = int.Parse(Console.ReadLine());
 
+    for (int i = 1; i < 4; i++)
     {
-        string answer = Console.ReadLine();
-        // while (answer != secretNum)
-
-        for (int i = 0; i < 3; i++)
+        if (guess != secretNum)
         {
-            if (answer != secretNum)
-            {
-                Console.WriteLine("Try Again");
-                answer = Console.ReadLine();
-            }
+            Console.WriteLine($"Guess #{i} Try Again");
+            guess = int.Parse(Console.ReadLine());
+        }
 
-            else
-            {
-                Console.WriteLine("You guessed it!!!");
+        else
+        {
+            Console.WriteLine("You guessed it!!!");
 
-            }
-        };
+        }
 
 
-    };
-
+    }
 }
+
+
 
